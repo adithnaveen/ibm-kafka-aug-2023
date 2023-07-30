@@ -14,7 +14,7 @@ Download and install jdk 11 for your respective OS(Mac/Win/Linux) - https://www.
 
 ## Step 2
 
-Download Kafka from - https://downloads.apache.org/kafka/3.2.3/kafka_2.12-3.2.3.tgz Extract with softwares like 7 zip / win zip etc
+Download Kafka from - https://downloads.apache.org/kafka/3.4.1/kafka_2.12-3.4.1.tgz Extract with softwares like 7 zip / win zip etc
 
 - Note Windows Users: install wsl2 first - https://docs.microsoft.com/en-us/windows/wsl/install
 
