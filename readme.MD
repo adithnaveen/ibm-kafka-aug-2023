@@ -105,42 +105,53 @@ Additional Softwares
 ## working with kafka 
 
 ### - start zookeeper 
-- ./zookeeper-server-start.sh ../config/zookeeper.properties 
 
+```
+ ./zookeeper-server-start.sh ../config/zookeeper.properties 
+```
 
 ### start kafka 
-- ./kafka-server-start.sh ../config/server.properties 
-
+```
+ ./kafka-server-start.sh ../config/server.properties 
+```
 ### list kafka topics 
--  kafka-topics.sh --bootstrap-server localhost:9092 --list
+```
+  kafka-topics.sh --bootstrap-server localhost:9092 --list
+```
+### create a topic
 
-### create a topic 
+ ```
 - kafka-topics.sh --bootstrap-server localhost:9092 --topic first-topic --create
 
 - kafka-topics.sh --bootstrap-server localhost:9092 --topic second-topic --create
-
+```
 
 ### create a producer 
 
-- kafka-console-producer.sh --bootstrap-server localhost:9092 --topic first-topic
-
+```
+ kafka-console-producer.sh --bootstrap-server localhost:9092 --topic first-topic
+```
 - you can type messages 
 
-### create a consumer 
+### create a consumer ```
 - kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first-topic 
 
 - kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first-topic --from-beginning
-
+```
 ### describe the topic 
-- kafka-topics.sh --bootstrap-server localhost:9092 --topic partition-topic-1 --describe 
+```
+ kafka-topics.sh --bootstrap-server localhost:9092 --topic partition-topic-1 --describe 
+```
 
 ### create topic with partition 
-- kafka-topics.sh --bootstrap-server localhost:9092 --topic partition-topic-1 --create --partitions 3 
 
+```
+ kafka-topics.sh --bootstrap-server localhost:9092 --topic partition-topic-1 --create --partitions 3 
+```
 
 ## to create replica factor of 2 (but note this will not work since we have single broker)
-- kafka-topics.sh --bootstrap-server localhost:9092 --topic topic-with-partition-repl --create --partitions 3 --replication-factor 2 
-
+```- kafka-topics.sh --bootstrap-server localhost:9092 --topic topic-with-partition-repl --create --partitions 3 --replication-factor 2 
+```
 ###  you can have defaultly 2 partition 
 - goto server.properties edit num.partitions=1 -> num.partitions=2 
 (note: please stop kafka broker and start again)
