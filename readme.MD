@@ -120,6 +120,25 @@ Additional Softwares
 - kafka-topics.sh --bootstrap-server localhost:9092 --topic second-topic --create
 
 
+### create a producer 
+
+- kafka-console-producer.sh --bootstrap-server localhost:9092 --topic first-topic
+
+- you can type messages 
+
+### create a consumer 
+- kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first-topic 
+
+- kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first-topic --from-beginning
+
+## describe the topic 
+- kafka-topics.sh --bootstrap-server localhost:9092 --topic partition-topic-1 --describe 
+
+## create topic with partition 
+- kafka-topics.sh --bootstrap-server localhost:9092 --topic partition-topic-1 --create --partitions 3 
+
+
+
 
 
 
