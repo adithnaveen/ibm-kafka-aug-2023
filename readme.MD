@@ -131,11 +131,20 @@ Additional Softwares
 
 - kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first-topic --from-beginning
 
-## describe the topic 
+### describe the topic 
 - kafka-topics.sh --bootstrap-server localhost:9092 --topic partition-topic-1 --describe 
 
-## create topic with partition 
+### create topic with partition 
 - kafka-topics.sh --bootstrap-server localhost:9092 --topic partition-topic-1 --create --partitions 3 
+
+
+## to create replica factor of 2 (but note this will not work since we have single broker)
+- kafka-topics.sh --bootstrap-server localhost:9092 --topic topic-with-partition-repl --create --partitions 3 --replication-factor 2 
+
+###  you can have defaultly 2 partition 
+- goto server.properties edit num.partitions=1 -> num.partitions=2 
+(note: please stop kafka broker and start again)
+
 
 
 

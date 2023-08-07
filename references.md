@@ -3,7 +3,5 @@
 - https://medium.com/@dantwining_26268/zero-downtime-blue-green-deployments-for-microservices-7896558623b2
 
 
-
-
-- 
+-  kafka documentation  - https://kafka.apache.org/documentation/#introduction
 
