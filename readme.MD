@@ -70,5 +70,69 @@ Additional Softwares
 
 ### 
 
-- Verticle Scaling 
+- Verticle Scaling (Monolithic)
+    - DAO 
+        - login system 
+        - stock 
+        - accounts 
+        - purchases 
+        - discounts 
+        - vouchers 
+        - audit 
+        - ..... 
 - Horizaontal Scaling 
+    - microservices 
+        - they keep ther services in different locations 
+
+
+- ESB (Enterprise Service Bus)
+    - Tibco 
+    - open mq 
+    - rabbit mq 
+    - mulesoft 
+    - kafka 
+        - does not belive - producer - consumer - it has the confirmation of the message is taken or not 
+        - instead publisher - subscriber - it does not have the confirmation of the message is taken or not 
+
+
+
+###  where kafka is used in MS Arch 
+    - discovery service + api
+    - in between MS 
+    - 
+
+
+## working with kafka 
+
+### - start zookeeper 
+- ./zookeeper-server-start.sh ../config/zookeeper.properties 
+
+
+### start kafka 
+- ./kafka-server-start.sh ../config/server.properties 
+
+### list kafka topics 
+-  kafka-topics.sh --bootstrap-server localhost:9092 --list
+
+### create a topic 
+- kafka-topics.sh --bootstrap-server localhost:9092 --topic first-topic --create
+
+- kafka-topics.sh --bootstrap-server localhost:9092 --topic second-topic --create
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
