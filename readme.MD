@@ -66,3 +66,9 @@ Additional Softwares
 
 
 
+
+
+### 
+
+- Verticle Scaling 
+- Horizaontal Scaling 
