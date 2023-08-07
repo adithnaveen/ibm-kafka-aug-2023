@@ -33,6 +33,8 @@ Additional Softwares
 
 
 
+# Day 1 
+
 ## introcution 
 
 - Debalaya Bohdhak -  I'm a very new in it also. I got to know about kalfka, and as I am in testing and want to expand my knowledge and expertise in the field.
@@ -106,8 +108,10 @@ Additional Softwares
 
 ### - start zookeeper 
 
+
 ```
  ./zookeeper-server-start.sh ../config/zookeeper.properties 
+
 ```
 
 ### start kafka 
@@ -133,10 +137,13 @@ Additional Softwares
 ```
 - you can type messages 
 
-### create a consumer ```
+### create a consumer
+
+```
 - kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first-topic 
 
 - kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first-topic --from-beginning
+
 ```
 ### describe the topic 
 ```
@@ -150,7 +157,9 @@ Additional Softwares
 ```
 
 ## to create replica factor of 2 (but note this will not work since we have single broker)
-```- kafka-topics.sh --bootstrap-server localhost:9092 --topic topic-with-partition-repl --create --partitions 3 --replication-factor 2 
+
+```
+- kafka-topics.sh --bootstrap-server localhost:9092 --topic topic-with-partition-repl --create --partitions 3 --replication-factor 2 
 ```
 ###  you can have defaultly 2 partition 
 - goto server.properties edit num.partitions=1 -> num.partitions=2 
@@ -158,14 +167,18 @@ Additional Softwares
 
 
 
+###  Segment size 
+- 50 for 3 chars it takes 
+
+- Hi - 1 segment  
+- bye - 1 segment 
+- Deb ala ya -  3 segments 
 
 
 
-
-
-
-
-
+- Best Fit  - hi (0.66) of the segment - which is very difficult 
+- First Fit - any body who wants the data just block multiples of segment (5) - preferred -> scala -> java 
+- Worst Fit - find multiple chunks of segment blocks and hop (bye) (0.45 and 0.55)
 
 
 
