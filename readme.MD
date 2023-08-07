@@ -19,7 +19,7 @@ Download Kafka from - https://downloads.apache.org/kafka/3.4.1/kafka_2.12-3.4.1.
 - Note Windows Users: install wsl2 first - https://docs.microsoft.com/en-us/windows/wsl/install
 
 - To install wsl
-wsl --install
+- wsl --install
 
 
 ## Step 3
