@@ -218,6 +218,84 @@ ator=:
 ```
 
 - Consumer groups 
+    - by default kafka-console-consumer is single consumer it is possible for you to have group of consumer and call it as consumer groups 
+    - pls ensure to have more than 2 partitions for the benefit of the consumer groups 
+    - code section 
+
+```
+        > kafka-topics.sh --bootstrap-server localhost:9092  --topic topic-partition-3 --create --partitions 3
+        ```
+        --  
+```
+
+```
+        > kafka-topics.sh --bootstrap-server localhost:9092 --topic topic-partition-3 --describe
+```
+
+        > kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic topic-partition-3 --group second-application
+        
+        - to reset the offset to earliest dry run 
+        > kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group first-application --reset-offsets --to-earliest --dry-run --topic topic-partition-3
+
+        - to reset the offset to earliest execute
+        > kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group first-application --reset-offsets --to-earliest --execute --topic topic-partition-3
+
+
+-  kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group first-application --reset-offsets --to-earliest --dry-run --topic topic-partition-3
+
+GROUP                          TOPIC                          PARTITION  NEW-OFFSET     
+first-application              topic-partition-3              0          0              
+first-application              topic-partition-3              1          0              
+first-application              topic-partition-3              2          0              
+$ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group first-application --reset-offsets --to-earliest --execute --topic topic-partition-3
+
+GROUP                          TOPIC                          PARTITION  NEW-OFFSET     
+first-application              topic-partition-3              0          0              
+first-application              topic-partition-3              1          0              
+first-application              topic-partition-3              2          0              
+$ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group first-application --describe                                                       
+
+Consumer group 'first-application' has no active members.
+
+GROUP             TOPIC             PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+first-application topic-partition-3 0          0               17              17              -               -               -
+first-application topic-partition-3 1          0               10              10              -               -               -
+first-application topic-partition-3 2          0               15              15              -               -               -
+ 
+
+ --
+- reset by -5 and +2 
+ $ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group first-application --reset-offsets --shift-by -5 --execute --topic topic-partition-3 
+
+GROUP                          TOPIC                          PARTITION  NEW-OFFSET     
+first-application              topic-partition-3              0          12             
+first-application              topic-partition-3              1          5              
+first-application              topic-partition-3              2          10             
+$ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group first-application --describe                                                       
+
+Consumer group 'first-application' has no active members.
+
+GROUP             TOPIC             PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+first-application topic-partition-3 0          12              17              5               -               -               -
+first-application topic-partition-3 1          5               10              5               -               -               -
+first-application topic-partition-3 2          10              15              5               -               -               -
+$ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group first-application --reset-offsets --shift-by 2 --execute --topic topic-partition-3
+
+GROUP                          TOPIC                          PARTITION  NEW-OFFSET     
+first-application              topic-partition-3              0          14             
+first-application              topic-partition-3              1          7              
+first-application              topic-partition-3              2          12             
+$ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group first-application --describe                                                      
+
+Consumer group 'first-application' has no active members.
+
+GROUP             TOPIC             PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+first-application topic-partition-3 0          14              17              3               -               -               -
+first-application topic-partition-3 1          7               10              3               -               -               -
+first-application topic-partition-3 2          12              15              3               -               -               -
+
+
+    ```
 - Reset offsets 
 - using  Kafka with Java (Programming language)
 - case study (wiki...)
