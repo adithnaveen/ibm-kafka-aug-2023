@@ -234,6 +234,11 @@ ator=:
 
         > kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic topic-partition-3 --group second-application
 
+
+- Reset offsets 
+
+
+
 ```
         - to reset the offset to earliest dry run 
    
@@ -304,14 +309,19 @@ first-application topic-partition-3 2          12              15              3
     ```
 ```
 
+## to read from partituclar partition 
+```
+    > kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic topic-partition-3 --partition 0 
+
+```
 
 
 
 
-
-
-- Reset offsets 
 - using  Kafka with Java (Programming language)
+    - in java project pom.xml -> project object model 
+    - all the artefacts for project will be kept inside ~/. -> home directory of user 
+    
 - case study (wiki...)
 - Kafka with KRaft 
 - single zookeeper multi cluster 
