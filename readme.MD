@@ -233,13 +233,19 @@ ator=:
 ```
 
         > kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic topic-partition-3 --group second-application
-        
+
+```
         - to reset the offset to earliest dry run 
+   
         > kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group first-application --reset-offsets --to-earliest --dry-run --topic topic-partition-3
 
-        - to reset the offset to earliest execute
-        > kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group first-application --reset-offsets --to-earliest --execute --topic topic-partition-3
+```
 
+        - to reset the offset to earliest execute
+
+        > kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group first-application --reset-offsets --to-earliest --execute --topic topic-partition-3
+```
+- code snippet output 
 
 -  kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group first-application --reset-offsets --to-earliest --dry-run --topic topic-partition-3
 
@@ -263,7 +269,8 @@ first-application topic-partition-3 1          0               10              1
 first-application topic-partition-3 2          0               15              15              -               -               -
  
 
- --
+
+
 - reset by -5 and +2 
  $ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group first-application --reset-offsets --shift-by -5 --execute --topic topic-partition-3 
 
@@ -294,8 +301,15 @@ first-application topic-partition-3 0          14              17              3
 first-application topic-partition-3 1          7               10              3               -               -               -
 first-application topic-partition-3 2          12              15              3               -               -               -
 
-
     ```
+```
+
+
+
+
+
+
+
 - Reset offsets 
 - using  Kafka with Java (Programming language)
 - case study (wiki...)
