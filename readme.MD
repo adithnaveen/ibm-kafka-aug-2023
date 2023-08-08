@@ -182,9 +182,48 @@ Additional Softwares
 
 
 
+# Day 2 
 
 
+## topics for the day 
 
+- map (key / value )
+    - hi (producer) -> hi (consumer) 
+    - key,value -> key and value 
+
+```
+ -- to start producer with key/value pair  and seperator 
+    > kafka-console-producer.sh --bootstrap-server localhost:9092 --topic first-topic --property parse.key=true --property key.separ
+ator=:
+```
+
+```
+    greet: hi 
+    null:hi
+```
+
+ - in java 
+    ```
+        int n; 
+        String s; 
+        Integer nn; 
+    ```
+
+```
+    - to use formatter in the consumer 
+
+    >  kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first-topic --formatter  kafka.tools.DefaultMessageFormatter --property print.timestamp=true --property print.key=true --property print.value=true
+
+      >  kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first-topic --formatter  kafka.tools.DefaultMessageFormatter --property print.timestamp=true --property print.key=true --property print.value=true --from-beginning 
+```
+
+- Consumer groups 
+- Reset offsets 
+- using  Kafka with Java (Programming language)
+- case study (wiki...)
+- Kafka with KRaft 
+- single zookeeper multi cluster 
+- grafana / ELK 
 
 
 
