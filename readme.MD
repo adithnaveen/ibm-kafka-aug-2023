@@ -321,11 +321,15 @@ first-application topic-partition-3 2          12              15              3
 - using  Kafka with Java (Programming language)
     - in java project pom.xml -> project object model 
     - all the artefacts for project will be kept inside ~/. -> home directory of user 
-    
+
+
+
+
+
+
+- grafana / ELK 
 - case study (wiki...)
 - Kafka with KRaft 
 - single zookeeper multi cluster 
-- grafana / ELK 
-
-
+- Case study driven - DB (Mysql), Selenium - POM, Kafka 
 

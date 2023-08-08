@@ -27,7 +27,6 @@ public class ProducerExample01 {
 		prop.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName()); 
 		prop.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 	
-		
 		// create producer 
 		KafkaProducer<String, String> producer = new KafkaProducer<>(prop); 
 		
@@ -39,7 +38,6 @@ public class ProducerExample01 {
 		// attach the record to the producer  and send 
 		producer.send(producerRecord); 
 		
-		
 		// flush the producer to the the connection is closed 
 		producer.flush(); 
 		
@@ -48,7 +46,5 @@ public class ProducerExample01 {
 		producer.close(); 
 		
 		logger.info("Record sent to kafka");
-		
-		
 	}
 }
