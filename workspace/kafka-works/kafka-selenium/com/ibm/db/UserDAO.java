@@ -36,4 +36,13 @@ public class UserDAO {
 		return users; 
 		
 	}
+	
+	public static void main(String[] args) {
+		List<User> allUsers = new UserDAO().getAllUsers();
+		
+		for(User user : allUsers) {
+			System.out.println(user);
+		}
+		 
+	}
 }
