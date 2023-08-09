@@ -356,6 +356,34 @@ first-application topic-partition-3 2          12              15              3
             > kafka-console-consumer.sh --bootstrap-server localhost:9092,localhost:9093,localhost:9094 --topic topic-with-partition-repl --from-beginning 
     ```
 
-- Kafka with KRaft 
 - Case study driven - DB (Mysql), Selenium - POM, Kafka 
+    1. setup the data base 
+        ```
+
+            > create database registeruser; 
+
+            > use registeruser; 
+
+
+            > create table registeruser(
+                fullname varchar(40), 
+                email varchar(40), 
+                event_date varchar(40), 
+                add_details varchar (100)
+            );  
+
+
+            > insert into registeruser values('Deepak', 'deepak@deepak.com', '10/12/2023', 'testing1'); 
+
+            > insert into registeruser values('sruthi', 'sruthi@sruthi.com', '10/8/2023', 'testing again'); 
+
+            > insert into registeruser values('prashanth', 'prashanth@mail.com.com', '2/12/2023', 'testing prahsnath'); 
+
+            > insert into registeruser values('radha', 'radha@mail.com', '10/10/2023', 'testing radha'); 
+        ```
+    2. pull the data from the DB with JDBC 
+    3. invoke selenium with the data got
+    4. integrate with kafka 
+
+- Kafka with KRaft 
 
