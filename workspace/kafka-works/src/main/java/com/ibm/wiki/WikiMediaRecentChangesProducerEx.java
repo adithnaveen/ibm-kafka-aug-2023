@@ -32,10 +32,8 @@ public class WikiMediaRecentChangesProducerEx {
 		// create producer 
 		KafkaProducer<String, String> producer = new KafkaProducer<>(prop); 
 		
-		
-		// the envent handler will help me to trigger when the event occurs 
+		// the event handler will help me to trigger when the event occurs 
 		// especially when a message arrives 
-		
 		
 		EventHandler eventHandler = new WikiEventHandler(producer, TOPIC); 
 		
