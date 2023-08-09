@@ -324,12 +324,38 @@ first-application topic-partition-3 2          12              15              3
 
 
 
-
+# Day 3 
 
 
 - grafana / ELK 
 - case study (wiki...)
-- Kafka with KRaft 
+    - java program 
 - single zookeeper multi cluster 
+
+    ```
+        - Steps for setting up multi cluster broker 
+
+        - Step 1 : Start Zookeeper - 2181 
+        - Step 2 : make a copy of server.properties to server1.properties, server2.properties
+        - Step 3 : Open file server.properites, port - 9092, broker.id=0, log.dirs=/tmp/kafka-logs-ibm-aug-2023-1
+        - Step 4 : Open file server1.properites, port - 9093, broker.id=1, log.dirs=/tmp/kafka-logs-ibm-aug-2023-2
+        - Step 5 : Open file server2.properites, port - 9094, broker.id=2, log.dirs=/tmp/kafka-logs-ibm-aug-2023-3
+        - Step 6 : Start kafka cluster with server.properties >  ./kafka-server-start.sh ../config/server.properties 
+        - Step 7 : Start kafka cluster with server1.properties >  ./kafka-server-start.sh ../config/server1.properties 
+        - Step 8 : Start kafka cluster with server2.properties >  ./kafka-server-start.sh ../config/server2.properties 
+        - Step 9 : create a topic for with partitions and replica 
+
+            > kafka-topics.sh --bootstrap-server localhost:9092,localhost:9093,localhost:9094 --topic topic-with-partition-repl --create --partitions 3 --replication-factor 3
+
+            > kafka-topics.sh --bootstrap-server localhost:9092,localhost:9093,localhost:9094 --topic topic-with-partition-repl --describe 
+
+        - Step 10 : Create a producer 
+            > kafka-console-producer.sh --bootstrap-server localhost:9092,localhost:9093,localhost:9094 --topic topic-with-partition-repl
+
+        - Step 11 : Create a consumer 
+            > kafka-console-consumer.sh --bootstrap-server localhost:9092,localhost:9093,localhost:9094 --topic topic-with-partition-repl --from-beginning 
+    ```
+
+- Kafka with KRaft 
 - Case study driven - DB (Mysql), Selenium - POM, Kafka 
 
