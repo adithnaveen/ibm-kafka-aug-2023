@@ -17,3 +17,24 @@
     - https://codepen.io/Krinkle/pen/BwEKgW?editors=1010
     - https://esjewett.github.io/wm-eventsource-demo/ 
     
+
+
+
+## kafka GUI 
+> https://medium.com/enfuse-io/gui-for-apache-kafka-e52698b00c42
+> https://www.kafkatool.com/download.html
+
+
+## saga pattern 
+> https://microservices.io/patterns/data/saga.html
+
+
+## zookeeper vs kraft 
+> https://www.confluent.io/blog/kafka-without-zookeeper-a-sneak-peek/
+
+
+
+## to install ubuntu with WSL2 
+> https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview
+
+
