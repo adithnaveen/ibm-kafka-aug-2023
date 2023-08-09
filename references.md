@@ -11,3 +11,9 @@
 -  Kafka Rebalancing Problems -  https://medium.com/bakdata/solving-my-weird-kafka-rebalancing-problems-c05e99535435
 
 - kafka slides-  http://cloudurable.com/ppt/kafka-tutorial-cloudruable-v2.pdf
+
+
+- wikimedia dashboard
+    - https://codepen.io/Krinkle/pen/BwEKgW?editors=1010
+    - https://esjewett.github.io/wm-eventsource-demo/ 
+    
